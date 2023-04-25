@@ -13,6 +13,7 @@ import Profile from "./components/profile.component";
 import BoardUser from "./components/board-user.component";
 import BoardModerator from "./components/board-moderator.component";
 import BoardAdmin from "./components/board-admin.component";
+import Resume from "./components/resume.comp";
 
 import EventBus from "./common/EventBus";
 
@@ -110,6 +111,14 @@ class App extends Component<Props, State> {
                 </Link>
               </li>
             )}
+
+            {currentUser && (
+              <li className="nav-item">
+                <Link to={"/resume"} className="nav-link">
+                  Resume
+                </Link>
+              </li>
+            )}
           </div>
 
           {currentUser ? (
@@ -152,6 +161,7 @@ class App extends Component<Props, State> {
             <Route path="/user" element={<BoardUser />} />
             <Route path="/mod" element={<BoardModerator />} />
             <Route path="/admin" element={<BoardAdmin />} />
+            <Route path="/resume" element={<Resume />} />
           </Routes>
         </div>
 
